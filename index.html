@@ -1,34 +1,56 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <title>电子相册</title>
-  <style>
-    /* CSS 样式 */
-  </style>
-</head>
-<body>
-  <h1>电子相册</h1>
-  
-  <form id="passwordForm">
-    <label for="password">请输入密码：</label>
-    <input type="password" id="password" required>
-    <button type="submit">提交</button>
-  </form>
-  
-  <form id="uploadForm" style="display: none;">
-    <label for="photo">选择照片：</label>
-    <input type="file" id="photo" accept="image/*" required>
-    <label for="date">日期：</label>
-    <input type="date" id="date" required>
-    <button type="submit">上传</button>
-  </form>
-
-  <div id="gallery">
-    <!-- 照片展示区域 -->
-  </div>
-
-  <script>
-    // JavaScript 代码
-  </script>
-</body>
+<!DOCTYPE html>  
+<html>  
+<head>  
+  <title>电子相册</title>  
+  <style>  
+    body {  
+      font-family: Arial, sans-serif;  
+    }  
+    form {  
+      margin-bottom: 15px;  
+    }  
+    input[type="password"], input[type="file"], input[type="date"], button {  
+      width: 100%;  
+      padding: 10px;  
+      margin-bottom: 10px;  
+      border: 1px solid #ccc;  
+      border-radius: 5px;  
+    }  
+    button {  
+      background-color: #4CAF50;  
+      color: white;  
+      cursor: pointer;  
+    }  
+  </style>  
+</head>  
+<body>  
+  <h1>电子相册</h1>  
+    
+  <form id="passwordForm">  
+    <label for="password">请输入密码：</label>  
+    <input type="password" id="password" required>  
+    <button type="button" onclick="validatePassword()">提交</button>  
+  </form>  
+    
+  <form id="uploadForm" style="display: none;">  
+    <label for="photo">选择照片：</label>  
+    <input type="file" id="photo" accept="image/*" required>  
+    <label for="date">日期：</label>  
+    <input type="date" id="date" required>  
+    <button type="submit">上传</button>  
+  </form>  
+    
+  <div id="gallery"></div>  
+    
+  <script>  
+    function validatePassword() {  
+      var password = document.getElementById('password').value;  
+      if (password === 'your_password') { // 这里替换为您的密码  
+        document.getElementById('uploadForm').style.display = 'block'; // 显示上传表单  
+      } else {  
+        alert('密码错误！'); // 密码错误提示信息，可以替换为其他处理方式，如重新输入密码等。  
+      }  
+    }  
+  </script>  
+</body>  
 </html>
